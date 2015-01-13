@@ -1,0 +1,3 @@
+[submodule "bigtree"]
+	path = bigtree
+	url = git://github.com/bigtreecms/BigTree-CMS.git

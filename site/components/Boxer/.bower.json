@@ -1,0 +1,44 @@
+{
+  "name": "Boxer",
+  "version": "1.9.1",
+  "description": "A jQuery plugin for displaying images and content in a modal overlay. Part of the formstone library.",
+  "keywords": [
+    "javascript",
+    "jquery",
+    "lightbox",
+    "modal",
+    "slideshow",
+    "ui",
+    "formstone",
+    "benplum"
+  ],
+  "authors": [
+    "Ben Plum"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.benplum.com/formstone/boxer/",
+  "main": [
+    "jquery.fs.boxer.css",
+    "jquery.fs.boxer.min.js",
+    "fs-boxer-icons.png",
+    "fs-boxer-loading.gif",
+    "fs-boxer-loading-dark.gif"
+  ],
+  "ignore": [
+    "*.json"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.7.0"
+  },
+  "devDependencies": {},
+  "_release": "1.9.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.9.1",
+    "commit": "8454de0a331745858b99006efcc3f9857d69855d"
+  },
+  "_source": "git://github.com/benplum/Boxer.git",
+  "_target": "~1.9.1",
+  "_originalSource": "Boxer",
+  "_direct": true
+}

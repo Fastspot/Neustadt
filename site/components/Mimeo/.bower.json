@@ -1,0 +1,15 @@
+{
+  "name": "Mimeo",
+  "homepage": "https://github.com/benplum/Mimeo",
+  "version": "0.0.4",
+  "_release": "0.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.4",
+    "commit": "1b472f1c4458c903ca070e25941a4805982574e5"
+  },
+  "_source": "git://github.com/benplum/Mimeo.git",
+  "_target": "~0.0.4",
+  "_originalSource": "Mimeo",
+  "_direct": true
+}

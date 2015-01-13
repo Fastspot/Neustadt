@@ -1,0 +1,17 @@
+/* Retina Assets */
+@media only screen and (-moz-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 3/2),
+       only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 1.5dppx) {
+
+	#header .logo,
+	#footer .logo_footer,
+	#footer .social a:before,
+	#footer .door2:before,
+	.photo_gallery .roller-control,
+	.featured_projects .roller-control,
+	.navigation_compact .mobile_handle
+	{ background-image: url(../images/sprite_2x.png); background-size: 252px 261px; }
+
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Rubberband",
+  "homepage": "https://github.com/benplum/Rubberband",
+  "version": "2.0.8",
+  "_release": "2.0.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.8",
+    "commit": "a66fec69c9e69599ff5fc6db99cb0e743156a405"
+  },
+  "_source": "git://github.com/benplum/Rubberband.git",
+  "_target": "~2.0.8",
+  "_originalSource": "Rubberband",
+  "_direct": true
+}
