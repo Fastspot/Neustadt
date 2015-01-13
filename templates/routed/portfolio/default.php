@@ -1,14 +1,14 @@
 <?
 	$creativeMod = new NCMCreativeItems;
-	
+
 	$categoriesMod = new NCMCreativeCategories;
 	$categories = $categoriesMod->getAll();
-	
+
 	$clientsMod = new NCMClients;
 	$catMod = new NCMCreativeSubcategories;
-	
+
 	$clientFilter = false;
-	
+
 	if ($bigtree["commands"][0] == "category"){
 		$activeRoute = $bigtree["commands"][1];
 		$activeCat = $categoriesMod->getByRoute($activeRoute);
@@ -20,12 +20,12 @@
 	} else {
 		$creative = $creativeMod->getAll("position DESC");
 	}
-	
+
 	$threeRowCount = ceil(count($creative)/3);
 	$twoRowCount = ceil(count($creative)/2);
 	$pageLink = $cms->getLink($page["id"]);
-	
-	
+
+
 ?>
 <h1 class="phrase block">
 	<div class="line">
@@ -74,11 +74,11 @@
 		</div>
 	</div>
 	<div class="case_studies">
-		<? 
+		<?
 			$i = 0;
 			$j = 0;
 			foreach($creative as $item){
-				$i++; 
+				$i++;
 				$classes = array();
 				if ($i % 3 == 0){
 					$classes[] = "last_of_row3";
@@ -92,14 +92,14 @@
 				if ($i > ($twoRowCount-1)*2){
 					$classes[] = "bottom_row2";
 				}
-				
+
 				$client = $clientsMod->get($item["client"]);
 				$type = $catMod->get($item["type"]);
 		?>
 		<div class="desktop-4 tablet-3 mobile-full padded client_logo creative_item <?=implode(" ",$classes)?>">
 			<a href="<?=$pageLink?>details/<?=$item["route"]?>/">
 				<figure>
-					<img src="<?=$item["cover"]?>" alt="Madeira" />
+					<img src="<?=$item["cover"]?>" alt="">
 					<div class="info">
 						<div class="title"><?=$client["name"]?></div>
 						<div class="type"><?=$type["title"]?></div>

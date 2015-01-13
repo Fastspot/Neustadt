@@ -10,9 +10,9 @@
 
 	// Database info.
 	$bigtree["config"]["db"]["host"] = "localhost";
-	$bigtree["config"]["db"]["name"] = "neustadt2013";
-	$bigtree["config"]["db"]["user"] = "neustadt2013";
-	$bigtree["config"]["db"]["password"] = "%xCbP2~S3uJR+{Q";
+	$bigtree["config"]["db"]["name"] = "dev_ncm";
+	$bigtree["config"]["db"]["user"] = "fastspot_dev";
+	$bigtree["config"]["db"]["password"] = "fastspotdeadpets";
 	$bigtree["config"]["sql_interface"] = "mysqli"; // Change to "mysql" to use legacy MySQL interface in PHP.
 
 	// Separate write database info (for load balanced setups)
@@ -23,13 +23,13 @@
 
 	// Setup the www_root and resource_root
 	// Resource root must be on a different domain than www_root.  Usually we just remove the www. from the domain.
-	$bigtree["config"]["domain"] = "http://www.ncmark.com";
-	$bigtree["config"]["www_root"] = "http://www.ncmark.com/";
-	$bigtree["config"]["static_root"] = "http://www.ncmark.com/";
-	$bigtree["config"]["admin_root"] = "http://www.ncmark.com/admin/";
+	$bigtree["config"]["domain"] = "http://dev.fastspot.com";
+	$bigtree["config"]["www_root"] = str_replace(array("/var/www/vhosts/dev.fastspot.com/httpdocs/","/templates/config.php"),array("http://dev.fastspot.com/","/"),__FILE__);
+	$bigtree["config"]["static_root"] = $bigtree["config"]["www_root"];
+	$bigtree["config"]["admin_root"] = $bigtree["config"]["www_root"]."admin/";
 
 	// Current Environment
-	$bigtree["config"]["environment"] = "live"; // "dev" or "live"; empty to hide
+	$bigtree["config"]["environment"] = "dev"; // "dev" or "live"; empty to hide
 	$bigtree["config"]["environment_live_url"] = "http://www.ncmark.com"; // Site URL
 
 	// Default Image Quality Presets

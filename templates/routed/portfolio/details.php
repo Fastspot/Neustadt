@@ -1,11 +1,11 @@
-<? 
+<?
 	$creativeMod = new NCMCreativeItems;
 	$creative = $creativeMod->getByRoute($bigtree["commands"][0]);
-	
+
 	$pageLink = $cms->getLink($page["id"]);
-	
+
 	$bigtree["page"]["title"] = $creative["descriptive_title"];
-	
+
 	// OPEN GRAPH TAGS IN HEAD FOR PINTEREST / FACEBOOK
 	$includeOG = true;
 ?>
@@ -33,13 +33,24 @@
 			<div class="roller-canister">
 				<? foreach ($creative["gallery"] as $item){	?>
 				<div class="roller-item sizer-item">
-					<figure>
-						<img src="<?=$item["image"]?>" alt="" />
+					<?
+						if ($item["video"]) {
+							$video = "//player.vimeo.com/video/" . $item["video"];
+					?>
+					<figure class="video_frame">
+						<iframe src="<?=$video?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					</figure>
-					
-						<div class="desktop-10 desktop-push-1 tablet-6 mobile-full">
-							<p><?=$item["caption"]?></p>
-						</div>
+					<?
+						} else {
+					?>
+					<figure>
+						<img src="<?=$item["image"]?>" alt="">
+					<?
+						}
+					?>
+					<div class="desktop-10 desktop-push-1 tablet-6 mobile-full">
+						<p><?=$item["caption"]?></p>
+					</div>
 				</div>
 				<? } ?>
 			</div>
@@ -56,12 +67,8 @@
 			<h2>Related Work</h2>
 			<hr class="short" />
 			<div class="row">
-				<? 
-					foreach ($creative["related"] as $item) { 
-						/*
-						$client = $clientsMod->get($item["client"]);
-						$type = $subcategoriesMod->get($item["type"]);
-						*/
+				<?
+					foreach ($creative["related"] as $item) {
 				?>
 				<a href="<?=$pageLink?>details/<?=$item["route"]?>">
 					<div class="desktop-2 tablet-2 mobile-half">
