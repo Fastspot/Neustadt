@@ -11,7 +11,7 @@
 				if ($data["existing_video"] != $data["video"]) {
 					$id = $data["video"];
 					$videoType = $data["type"];
-					stream_context_set_default(array('http' => array('method' => 'HEAD')));
+					// stream_context_set_default(array('http' => array('method' => 'HEAD')));
 					$found = true;
 					if ($videoType == "youtube") {
 						// Figure out if we have a 404. YouTube only.
