@@ -45,6 +45,7 @@
 					?>
 					<figure>
 						<img src="<?=$item["image"]?>" alt="">
+					</figure>
 					<?
 						}
 					?>

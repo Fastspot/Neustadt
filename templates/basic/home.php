@@ -1,32 +1,32 @@
-<? 
+<?
 	$phraseMod = new NCMPhrases;
 	$phrases = $phraseMod->getApproved("RAND()");
 	$phrase = $phrases[0];
-	
+
 	$clientsMod = new NCMClients;
 	$clients = $clientsMod->getFeatured("position DESC",9);
-	
+
 	$caseMod = new NCMCaseStudies;
-	
+
 	$projectsMod = new NCMHomepageProjects;
 	$projects = $projectsMod->getApproved("position DESC",10);
-	
+
 	$creativeMod = new NCMCreativeItems;
-	
+
 	$blurbs = $cms->getSettings(array("strategy-blurb","research-blurb","creative-blurb"));
 	$phaseMod = new NCMPhases;
 	$researchPhases = $phaseMod->getMatching(array("type","homepage"),array("research","on"),"position DESC");
 	$strategyPhases = $phaseMod->getMatching(array("type","homepage"),array("strategy","on"),"position DESC");
 	$creativePhases = $phaseMod->getMatching(array("type","homepage"),array("creative","on"),"position DESC");
-	
+
 	$researchMod = new NCMResearchFindings;
 	$research = $researchMod->getApproved("RAND()",1);
 	$research = $research[0];
-	
+
 	$blogHighlightsMod = new NCMBlogHighlights;
 	$highlight = $blogHighlightsMod->getApproved("RAND()",1);
 	$highlight = $highlight[0];
-	
+
 	$clientsLink = $cms->getLink(17);
 	$casesLink = $cms->getLink(14);
 	$portfolioLink = $cms->getLink(6);
@@ -92,14 +92,14 @@
 				<span class="roller-control next">Next</span>
 			</menu>
 			<div class="roller-canister">
-				<? 
-					foreach ($projects as $project){ 
+				<?
+					foreach ($projects as $project){
 						$client = $clientsMod->get($project["client"]);
 						$gallery = array();
-						foreach($project["galleries"] as $item){
+						foreach($project["galleries"] as $item) {
 							$creative = $creativeMod->get($item);
-							foreach($creative["gallery"] as $image){
-								$gallery[] = $image["image"];
+							foreach($creative["gallery"] as $image) {
+								$gallery[] = $image;
 							}
 						}
 						$phases = array();
@@ -111,7 +111,7 @@
 							$link = $casesLink."details/".$cases[0]["route"];
 						} else if ($creatives = $creativeMod->getMatching("client",$client["id"])){
 							$link = $portfolioLink."client/".$client["id"];
-						}	
+						}
 				?>
 				<div class="roller-item sizer-item">
 					<div class="desktop-9 tablet-6 mobile-full gallery roller">
@@ -120,11 +120,30 @@
 							<span class="roller-control next">Next</span>
 						</menu>
 						<div class="roller-canister">
-							<? foreach($gallery as $img){ ?>
+							<?
+								foreach($gallery as $img) {
+							?>
 							<div class="roller-item">
-								<img src="<?=BigTree::prefixFile($img,"med_")?>" alt="<?=$client["name"]?> Image" />
+								<?
+									if ($img["video"]) {
+										$video = "//player.vimeo.com/video/" . $img["video"];
+								?>
+								<figure class="video_frame">
+									<iframe src="<?=$video?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+								</figure>
+								<?
+									} else {
+								?>
+								<figure>
+									<img src="<?=BigTree::prefixFile($img["image"],"med_")?>" alt="">
+								</figure>
+								<?
+									}
+								?>
 							</div>
-							<? } ?>
+							<?
+								}
+							?>
 						</div>
 					</div>
 					<div class="desktop-3 tablet-6 mobile-full info">
@@ -134,7 +153,7 @@
 						<h4>Project Phases</h4>
 						<p><?=implode(", ",$phases)?></p>
 						<? if (!$project["hide_link"]) { ?>
-						<a href="<?=$link?>" class="action">More About this Project</a> 
+						<a href="<?=$link?>" class="action">More About this Project</a>
 						<? } ?>
 					</div>
 				</div>
