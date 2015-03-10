@@ -25,7 +25,7 @@
 		
 		function getByCategories($cats){
 			$items = array();
-			$q = sqlquery("SELECT * FROM " . $this->Table . " WHERE type = " . implode(' OR type = ', $cats) . " ORDER BY descriptive_title ASC");
+			$q = sqlquery("SELECT * FROM " . $this->Table . " WHERE type = " . implode(' OR type = ', $cats) . " ORDER BY position DESC, id ASC");
 			while ($f = sqlfetch($q)) {
 				$items[] = $this->get($f);
 			}

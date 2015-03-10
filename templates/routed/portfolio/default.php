@@ -16,7 +16,7 @@
 	} else if ($bigtree["commands"][0] == "client"){
 		$clientFilter = true;
 		$activeClient = $clientsMod->get($bigtree["commands"][1]);
-		$creative = $creativeMod->getMatching("client",$bigtree["commands"][1],"position DESC");
+		$creative = $creativeMod->getMatching("client",$bigtree["commands"][1],"position DESC, id ASC");
 	} else {
 		$creative = $creativeMod->getAll("position DESC");
 	}
