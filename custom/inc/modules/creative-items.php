@@ -25,7 +25,7 @@
 		
 		function getByCategories($cats){
 			$items = array();
-			$q = sqlquery("SELECT * FROM " . $this->Table . " WHERE archived = '' AND (type = " . implode(' OR type = ', $cats) . ") ORDER BY REPLACE(descriptive_title,'The ','') ASC");
+			$q = sqlquery("SELECT * FROM " . $this->Table . " WHERE type = " . implode(' OR type = ', $cats) . " ORDER BY position DESC, id ASC");
 			while ($f = sqlfetch($q)) {
 				$items[] = $this->get($f);
 			}
