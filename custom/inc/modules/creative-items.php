@@ -18,7 +18,7 @@
 			
 			$item["client"] = parent::get(sqlfetch(sqlquery("SELECT * FROM ncm_clients WHERE id = ".$item["client"]." LIMIT 1")));
 			$item["type"] = parent::get(sqlfetch(sqlquery("SELECT * FROM ncm_creative_subcategories WHERE id = ".$item["type"]." LIMIT 1")));
-			$item["category"] = parent::get(sqlfetch(sqlquery("SELECT * FROM ncm_creative_categories WHERE subcategories LIKE '%\"".$item["type"]["id"]."\"%' LIMIT 1")));
+			$item["category"] = parent::get(sqlfetch(sqlquery("SELECT * FROM ncm_creative_categories WHERE subcategories LIKE '%\"".$item["type"]["id"]."\"%' ORDER BY title ASC LIMIT 1")));
 			
 			return $item;
 		}
