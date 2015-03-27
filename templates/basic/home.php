@@ -9,7 +9,7 @@
 	$caseMod = new NCMCaseStudies;
 
 	$projectsMod = new NCMHomepageProjects;
-	$projects = $projectsMod->getApproved("position DESC",10);
+	$projects = $projectsMod->getApproved("RAND()",10);
 
 	$creativeMod = new NCMCreativeItems;
 
