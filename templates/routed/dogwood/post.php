@@ -83,11 +83,9 @@
 			</a>
 		</div>
 		<div class="sharing split right">
-			<? /* Add This Sharing Widgets */ ?>
-			<div class="addthis_toolbox addthis_default_style right">
-				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-				<a class="addthis_button_tweet"></a>
-			</div>
+			<span class='st_facebook_large' displayText='Facebook'></span>
+			<span class='st_twitter_large' displayText='Tweet'></span>
+			<span class='st_email_large' displayText='Email'></span>
 		</div>
 	</div>
 	<div class="comments clear" id="comments">
@@ -144,3 +142,6 @@
 		</div>
 	</div>
 </article>
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "37e4c509-285a-4aa5-99c8-5abdb8cb7c90", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>

@@ -8,17 +8,26 @@
 ?>
 <aside class="desktop-3 tablet-2 mobile-full blog_sidebar">
 	<?
-		if (!$marks){ 
+		if (!$marks) { 
 	?>
 	<div class="ncm_blurb">
 		<?=$settings["ncm-blog-sidebar-header"]?>
 	</div>
+	
 	<h3>Categories</h3>
 	<ul>
 		<? foreach ($categories as $item){ ?>
 		<li><a href="<?=$blog_link?>category/<?=$item["route"]?>/"><?=$item["title"]?></a></li>
 		<? } ?>
 	</ul>
+	
+	<a href="<?=$blog_link?>rss/">
+		<div class="blog_callout mark_callout">
+			<h4>RSS Feed</h4>
+			<h3>Subscribe</h3>
+			<p>Follow our RSS Feed to get all the latest posts.</p>
+		</div>
+	</a>
 	
 	<a href="<?=$marksLink?>">
 		<div class="blog_callout mark_callout">
@@ -45,6 +54,14 @@
 		<li><a href="<?=$blog_link?>category/<?=$item["route"]?>/"><?=$item["title"]?></a></li>
 		<? } ?>
 	</ul>
+	
+	<a href="<?=$blog_link?>rss/">
+		<div class="blog_callout mark_callout">
+			<h4>RSS Feed</h4>
+			<h3>Subscribe</h3>
+			<p>Follow our RSS Feed to get all the latest posts.</p>
+		</div>
+	</a>
 	
 	<a href="<?=$ncmLink?>">
 		<div class="blog_callout mark_callout">
