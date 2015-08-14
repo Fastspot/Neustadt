@@ -24,6 +24,15 @@
 	
 		$bigtree["path"] = explode("/",rtrim($_GET["bigtree_htaccess_url"],"/"));
 	}
+	
+	// Prevent path manipulations
+	$bigtree["path"] = array_filter($bigtree["path"],function($val) {
+		if ($val == "..") {
+			die();
+		}
+		return true;
+	});
+	
 	$path = $bigtree["path"]; // Backwards compatibility
 	
 	// Let admin bootstrap itself.  New setup here so the admin can live at any path you choose for obscurity.
